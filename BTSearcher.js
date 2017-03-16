@@ -297,7 +297,7 @@ defineClass('HTMLParser', {}, {
                     item.setFiles(NSArray.arrayWithObject(pElement.text()));
                 }
             }
-            
+             
             var barElements = hppleTmp.searchWithXPathQuery("//div[@class = 'item-bar']");
             
             for (var f = 0; f < barElements.count(); f++) {
