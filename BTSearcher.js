@@ -230,13 +230,20 @@ defineClass('HTMLParser', {}, {
 
             var resultElement = resultElements.objectAtIndex(a);
             
-            var aElements = resultElement.searchWithXPathQuery("//a");
+            var groupElements = resultElement.searchWithXPathQuery("//div[@class = 'list-group']");
+
+            for (var b = 0; b < groupElements.count(); b++) {
+
+                var groupElement = groupElements.objectAtIndex(b);
+
+                var aElements = groupElement.searchWithXPathQuery("//a");
             
-            for (var b = 0; b < aElements.count(); b++) {
+                for (var c = 0; c < aElements.count(); c++) {
 
-                var aElement = aElements.objectAtIndex(b);
+                    var aElement = aElements.objectAtIndex(b);
 
-                return aElement.text();
+                    return aElement.text();
+                }
             }
         }
 
